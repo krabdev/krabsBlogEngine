@@ -1,14 +1,8 @@
-@model IEnumerable<KrabsBlogEngine.Models.UserProfile>
 @{
-    
     ViewBag.Title = "Index";
 }
 
-<h2>Users</h2>
-
-
-
 <div>
-    @Html.ActionLink("Users", "Users", "Main")
-    @Html.ActionLink("Roles", "Roles", "Main")
-</div>
+    <p>Postcount: @ViewBag.postCount.ToString()  </p>
+    <p>Usercount: </p>
+</div> 

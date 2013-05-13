@@ -15,15 +15,16 @@
                 <p>
                     @Html.DisplayFor(modelItem => item.Content)
                 </p>
-                @Html.ActionLink("Edit", "Edit", new { id = item.PostId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.PostId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.PostId })
+                @if(User.IsInRole("Admin")){
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PostId }) 
+                    @Html.ActionLink("Details", "Details", new { id = item.PostId }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PostId })
+                }
             </div>
             <hr />
         }
     </div>
     <div class="span3">
-
     </div>
 </div>
 

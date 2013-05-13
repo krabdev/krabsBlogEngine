@@ -7,18 +7,21 @@ using KrabsBlogEngine.Models;
 using WebMatrix.WebData;
 using System.Web.Security;
 using KrabsBlogEngine.Filters;
+using KrabsBlogEngine.Areas.Blog.Models;
 
 
 namespace KrabsBlogEngine.Areas.SimpleMembershipAdministration.Controllers
 {
+    [Authorize(Roles="Admin")]
     public class MainController : Controller
     {
         //
         // GET: /SimpleMembershipAdministration/Main/
-
+        [Authorize(Roles="Admin")]
         public ActionResult Index()
         {
-
+            Context _db = new Context();
+            ViewBag.postCount = _db.Posts.Count();
             return View();
         }
 

@@ -23,7 +23,7 @@ namespace KrabsBlogEngine.Areas.Blog.Controllers
 
         //
         // GET: /Blog/Home/Details/5
-
+        [Authorize(Roles="Admin")]
         public ActionResult Details(int id = 0)
         {
             Post post = db.Posts.Find(id);
@@ -36,7 +36,7 @@ namespace KrabsBlogEngine.Areas.Blog.Controllers
 
         //
         // GET: /Blog/Home/Create
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +46,7 @@ namespace KrabsBlogEngine.Areas.Blog.Controllers
         // POST: /Blog/Home/Create
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Post post)
         {
@@ -61,7 +62,7 @@ namespace KrabsBlogEngine.Areas.Blog.Controllers
 
         //
         // GET: /Blog/Home/Edit/5
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id = 0)
         {
             Post post = db.Posts.Find(id);
@@ -76,6 +77,7 @@ namespace KrabsBlogEngine.Areas.Blog.Controllers
         // POST: /Blog/Home/Edit/5
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Post post)
         {
@@ -90,7 +92,7 @@ namespace KrabsBlogEngine.Areas.Blog.Controllers
 
         //
         // GET: /Blog/Home/Delete/5
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id = 0)
         {
             Post post = db.Posts.Find(id);
@@ -103,7 +105,7 @@ namespace KrabsBlogEngine.Areas.Blog.Controllers
 
         //
         // POST: /Blog/Home/Delete/5
-
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -17,7 +17,7 @@ namespace KrabsBlogEngine.Areas.SimpleMembershipAdministration
             context.MapRoute(
                 "Admin",
                 "Admin/{controller}/{action}/{id}",
-                new {controller="Main", action = "Index", id = UrlParameter.Optional }
+                new { controller = "Main", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -8,21 +8,15 @@
 <h2>Users</h2>
 
 
-<table>
+<table class="table">
     <thead>
         <tr>
-            <th>Username
-
-            </th>
+            <th>Username</th>
             @foreach (var role in roles)
             {
-                <th>@role
-                </th>
+                <th>@role</th>
             }
-
         </tr>
-
-
     </thead>
     <tbody>
         @foreach (var user in Model)
@@ -40,20 +34,12 @@
                         {
                             <input type="hidden" value="@user.UserName" name="username" />
                             <input type="hidden" value="@role" name="rolename" />
-                            <input type="checkbox" name="ischecked" onclick="this.form.submit();" value="true" checked="@System.Web.Security.Roles.IsUserInRole(@user.UserName,role)" />
+                            <input type="checkbox" name="ischecked" onclick="this.form.submit();" value="true" checked="@System.Web.Security.Roles.IsUserInRole(@user.UserName, role)" />
                             
                         }
-
-
                     </td>
                 }
-
             </tr>  
-        
         }
     </tbody>
 </table>
-
-<p>
-    @Html.ActionLink("Roles", "Roles", "Main")
-</p>
