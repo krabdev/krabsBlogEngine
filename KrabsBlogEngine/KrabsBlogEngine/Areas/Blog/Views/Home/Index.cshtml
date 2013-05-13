@@ -1,0 +1,29 @@
+﻿@model IEnumerable<KrabsBlogEngine.Areas.Blog.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div class="row-fluid">
+    <div class="span9">
+        @foreach (var item in Model)
+        {
+            <div>
+                <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </p>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PostId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.PostId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.PostId })
+            </div>
+            <hr />
+        }
+    </div>
+    <div class="span3">
+
+    </div>
+</div>
+

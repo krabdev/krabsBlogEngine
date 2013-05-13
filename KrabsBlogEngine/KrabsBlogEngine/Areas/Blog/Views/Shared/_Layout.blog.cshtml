@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/Areas/Blog/Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/Blog/Assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="#">Blog</a>
+                <ul class="nav">
+                    <li><a href="#">Home</a></li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Options
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Create New", "Create")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Areas/Blog/Assets/bootstrap/js/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

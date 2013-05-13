@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/Content/Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <a class="brand" href="#">Admin</a>
+                        <ul class="nav">
+                            <li><a href="#">Home</a></li>
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span3">
+                @Html.Partial("_AdminMenu")
+            </div>
+            <div class="span9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Content/Assets/bootstrap/js/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿@model KrabsBlogEngine.Areas.Blog.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1>@Model.Title</h1>
+<hr />
+<div class="row-fluid">
+    <div class="span1">
+    </div>
+    <div class="span8">
+        <p>
+            @Model.Content
+        </p>
+    </div>
+    <div class="span3">
+        @if(User.IsInRole("Admin")){
+            @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }) 
+            @Html.ActionLink("Back to List", "Index")
+        }
+    </div>
+</div>
